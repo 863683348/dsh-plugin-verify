@@ -1,0 +1,11 @@
+# dsh-plugin-verify — bundle patch layer.
+- insert:
+    - id: verify
+      name: 'dsh-plugin-verify'
+      config:
+        maxFiles: 500
+        maxFileBytes: 1048576
+        maxEvidence: 20
+        timeoutMs: 20000
+        promptSection: true
+        sectionOrder: 6
