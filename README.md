@@ -2,6 +2,10 @@
 
 **Verification toolkit for DeepSeek Harness agents** — evidence-based claim checking, config validation, and read-only network probes (URL / npm / GitHub).
 
+## Compatibility
+
+Tool schemas are validated against the `@deepseek-ai/dsh-tools` value-schema DSL (compiled at plugin load). 1.1.1 fixes a schema violation that made the host abort the whole profile boot on DSH ≥ 0.1.0-rc.6 with `unsupported JSON schema: schema.required is not supported by the value schema DSL`. If you installed an affected version and your DSH no longer starts, upgrade to 1.1.1 (or remove the plugin from the profile) — no data is lost.
+
 ## Tools
 
 | Tool | Mode | What it does |
