@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-verify",
-  "version": "1.0.0",
-  "description": "Verification toolkit for DeepSeek Harness agents: evidence-based claim checking against workspace files with line citations, config file validation (JSON/YAML), HTTP URL status checks, npm package checks and GitHub repo submission-readiness checks — complementary to dsh-plugin-gate",
+  "version": "1.1.0",
+  "description": "Verification toolkit for DeepSeek Harness agents: evidence-based claim checking against workspace files with line citations, config validation (JSON/YAML), HTTP URL status checks, npm package checks, GitHub repo submission-readiness checks, and batch verification with bounded concurrency and per-result confidence grading",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -14,11 +14,12 @@
     "cordis.patch.yml",
     "README.md",
     "README.zh.md",
-    "SECURITY.md"
+    "SECURITY.md",
+    "ROADMAP.md"
   ],
   "scripts": {
-    "test": "node --test test/",
-    "prepublishOnly": "node --test test/"
+    "test": "node test/batch.test.mjs && node test/verify.test.mjs",
+    "prepublishOnly": "node test/batch.test.mjs && node test/verify.test.mjs"
   },
   "keywords": [
     "deepseek-harness",

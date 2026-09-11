@@ -11,6 +11,7 @@
 | | `url` | HTTP(S) availability: status, redirect target, latency |
 | | `npm` | Registry check: exists, latest version, `dsh.bundle` manifest, publish time |
 | | `repo` | GitHub submission-readiness: exists, age, `dsh-plugin` topic, approximate commit count |
+| | `batch` | Run many checks at once (`claims` / `configs` / `urls` / `packages` / `repos`) with bounded concurrency, a summary table and a per-result confidence grade |
 
 ## Usage
 
@@ -21,6 +22,7 @@ verify config ./cordis.patch.yml
 verify url https://example.com
 verify npm dsh-plugin-focus
 verify repo 863683348/dsh-plugin-gate
+verify batch claims:["the plugin pins zod"] urls:["https://example.com"] packages:["dsh-plugin-focus"]
 ```
 
 ## Notes
@@ -39,3 +41,8 @@ node test/verify.test.mjs
 ## License
 
 MIT
+
+
+## Roadmap
+
+See [ROADMAP.md](./ROADMAP.md) — next five versions (v1.1.0 – v1.5.0): batch & confidence, reports & regression, strict validation, probe hardening, submission-readiness expansion.
